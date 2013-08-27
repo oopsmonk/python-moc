@@ -267,3 +267,7 @@ def playlist_clear():
     """ Clears moc's playlist. """
     _exec_command('clear')
 clear_playlist = playlist_clear
+
+def play_num(index):
+    """ Play index of palylist. """
+    _exec_command('playnum', index)
