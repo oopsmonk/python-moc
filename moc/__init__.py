@@ -271,3 +271,9 @@ clear_playlist = playlist_clear
 def play_num(index):
     """ Play index of palylist. """
     _exec_command('playnum', index)
+
+def m3u_append(file_path):
+    """
+    Append the m3u file to moc's playlist.
+    """
+    _exec_command('append', file_path)
