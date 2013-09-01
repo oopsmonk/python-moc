@@ -7,11 +7,13 @@ STATE_NOT_RUNNING = -1
 STATE_STOPPED = 0
 STATE_PAUSED  = 1
 STATE_PLAYING = 2
+STATE_NETBUFF = 3
 
 STATES = {
     'PLAY'  : STATE_PLAYING,
     'STOP'  : STATE_STOPPED,
-    'PAUSE' : STATE_PAUSED
+    'PAUSE' : STATE_PAUSED,
+    'BUFFERING'  : STATE_NETBUFF
 }
 
 class MocError(Exception):
@@ -76,6 +78,9 @@ def is_playing():
 
 def is_stopped():
     return get_state() == STATE_STOPPED
+
+def is_buffering():
+    return get_state() == STATE_NETBUFF
 
 def play():
     """ Restarts playback after it's been stopped. """
